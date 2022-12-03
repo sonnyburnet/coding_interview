@@ -1,2 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+
+using static System.Console;
+using MaximumSubArraySum = Examples.MaximumSubArraySum;
+
+WriteLine(MaximumSubArraySum.MaximumSubArraySum.BruteForceSolution());

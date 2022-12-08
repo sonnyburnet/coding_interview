@@ -37,4 +37,20 @@ public class Solution {
     public int MaxProfit(int[] prices) {
         return 0;
     }
+
+    // Approach 1 (greedy):
+    // This problem can be solved using the greedy approach. To maximize the profit we have to minimize the buy cost and we have to sell it at maximum price. 
+    // Follow the steps below to implement the above idea:
+
+    // Declare a buy variable to store the buy cost and max_profit to store the maximum profit.
+    // Initialize the buy variable to the first element of the prices array.
+    // Iterate over the prices array and check if the current price is minimum or not.
+    // If the current price is minimum then buy on this ith day.
+    // If the current price is greater than the previous buy then make profit from it and maximize the max_profit.
+    // Finally, return the max_profit.
+    public static int greedyApproach(int[] prices)
+    {
+        return 0;
+    } 
+
 }

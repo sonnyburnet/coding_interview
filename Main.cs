@@ -8,6 +8,7 @@ using Ch3 = Examples.Chapter3;
 using SortingAndSearching = Examples.SortingAndSearching;
 using Peek = Algorithms.PeekFinding;
 using Stock = Algorithms.BestTimeToBuyAndSellStock;
+using Palindrome = Algorithms.ValidPalindrome;
 
 int Min = -10000;
 int Max = 10000;
@@ -70,5 +71,7 @@ int[] unsorted_array = new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 // var r = Peek.Solution.Find(unsorted_array, 0, unsorted_array.Length - 1);
 // WriteLine(r);
 
-WriteLine(Stock.Solution.getCmp(unsorted_array, 0, int.MinValue, (int x, int y) => { return x > y ? x : y; }));
+// WriteLine(Stock.Solution.getCmp(unsorted_array, 0, int.MinValue, (int x, int y) => { return x > y ? x : y; }));
+
+WriteLine(Palindrome.Solution.IsPalindrome("race a car"));
 

@@ -1,0 +1,25 @@
+add some algos
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Sat Dec 10 17:48:08 2022 +0300
+# Committer: Sonny <sonny@Sonnys-Laptop.local>
+#
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	new file:   f#/Algorithms/Algorithms.fsproj
+#	new file:   f#/Algorithms/Program.fs
+#
+# Changes not staged for commit:
+#	modified:   Main.cs
+#
+# Untracked files:
+#	src/Algorithms/FirstBadVersion.cs
+#	src/Algorithms/InvertBinaryTree.cs
+#	src/Algorithms/LCABinarySearchTree.cs
+#	src/Algorithms/ValidAnagram.cs
+#

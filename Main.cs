@@ -9,6 +9,7 @@ using SortingAndSearching = Examples.SortingAndSearching;
 using Peek = Algorithms.PeekFinding;
 using Stock = Algorithms.BestTimeToBuyAndSellStock;
 using Palindrome = Algorithms.ValidPalindrome;
+using Tree = Algorithms.InvertBinaryTree;
 
 int Min = -10000;
 int Max = 10000;
@@ -73,5 +74,28 @@ int[] unsorted_array = new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 
 // WriteLine(Stock.Solution.getCmp(unsorted_array, 0, int.MinValue, (int x, int y) => { return x > y ? x : y; }));
 
-WriteLine(Palindrome.Solution.IsPalindrome("race a car"));
+var tree = new Tree.TreeNode(2);
+var tree_l = new Tree.TreeNode(3);
+var tree_l_1 = new Tree.TreeNode(1);
+tree.left = tree_l;
+tree_l.left = tree_l_1;
+
+// var tree_l_2 = new Tree.TreeNode(1);
+// var tree_r_2 = new Tree.TreeNode(3);
+// tree_l.left = tree_l_2;
+// tree_l.right = tree_r_2;
+
+// var tree_l_7 = new Tree.TreeNode(6);
+// var tree_r_7 = new Tree.TreeNode(9);
+
+// tree_r.left = tree_l_7;
+// tree_r.right = tree_r_7;
+
+
+
+Tree.TreeNode.print2D(tree);
+
+var t = Tree.Solution.InvertTree(tree);
+
+Tree.TreeNode.print2D(t);
 

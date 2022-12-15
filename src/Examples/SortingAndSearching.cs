@@ -66,23 +66,64 @@ class SortingAndSearching
 
         int[] sort(int[] list, int l, int r)
         {
-        
-          int[] go(int[] list, int l, int r)
-          {
-                var m = l + (r - l) / 2; 
-                var sorted_left = sort(list, l, m); 
-                var sorted_right = sort(list, m + 1, r); 
+
+            int[] go(int[] list, int l, int r)
+            {
+                var m = l + (r - l) / 2;
+                var sorted_left = sort(list, l, m);
+                var sorted_right = sort(list, m + 1, r);
                 return merge(sorted_left, sorted_right);
-          }
-          return (list.Length, l < r) switch
-          {
-            (0, _) => list,
-            (1, _) => list,
-            (_, true) => go(list, l, r),
-            (_, _) => new int[] {list[l]}
-          };
+            }
+            return (list.Length, l < r) switch
+            {
+                (0, _) => list,
+                (1, _) => list,
+                (_, true) => go(list, l, r),
+                (_, _) => new int[] { list[l] }
+            };
 
         };
         return sort(origin, 0, origin.Length - 1);
     }
+
+    public static int BinarySearchByJump(int[] arr, int x)
+    {
+        int k = 0;
+        var n = arr.Length - 1;
+        for (int b = n / 2; b >= 1; b /= 2)
+        {
+            while (k + b < n && arr[k + b] <= x) k += b;
+        }
+        if (arr[k] == x)
+        {
+            // x found at index k
+            return k;
+        }
+        else { return -1; }
+    }
+
+    public static void Swap(int[] arr)
+    {
+        void go(int[] arr, int ptr)
+        {
+            if (ptr > arr.Length - 1)
+                return;
+            var k = ptr - 1;
+            while (k >= 0)
+            {
+                if (arr[k] > arr[k + 1])
+                {
+                    var tmp = arr[k + 1];
+                    arr[k + 1] = arr[k];
+                    arr[k] = tmp;
+                    k--;
+                }
+                else break;
+            };
+            go(arr, ptr + 1);
+        }
+        go(arr, 1);
+    }
+
+
 }

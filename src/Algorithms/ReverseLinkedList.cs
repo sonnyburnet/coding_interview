@@ -11,27 +11,27 @@ namespace Algorithms.ReverseLinkedList;
  *         this.next = next;
  *     }
  * }
- */
-public class Solution
-{
-    public ListNode ReverseList(ListNode head)
-    {
-        ListNode go(ListNode old_list, ListNode new_list)
-        {
-            if(old_list == null) { return new_list; }
-            if (new_list == null)
-            {
-                var tmp = new ListNode(old_list.val);
-                return go(old_list.next, tmp);
-            }
-            else
-            {
-                var tmp = new ListNode(old_list.val);
-                tmp.next = new_list;
-                go(old_list.next, tmp);
-            }
-        };
-        return head == null ? null : go(head, null);
-    }
-}
+//  */
+// public class Solution
+// {
+//     public ListNode ReverseList(ListNode head)
+//     {
+//         ListNode go(ListNode old_list, ListNode new_list)
+//         {
+//             if(old_list == null) { return new_list; }
+//             if (new_list == null)
+//             {
+//                 var tmp = new ListNode(old_list.val);
+//                 return go(old_list.next, tmp);
+//             }
+//             else
+//             {
+//                 var tmp = new ListNode(old_list.val);
+//                 tmp.next = new_list;
+//                 go(old_list.next, tmp);
+//             }
+//         };
+//         return head == null ? null : go(head, null);
+//     }
+// }
 

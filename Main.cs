@@ -4,12 +4,14 @@ using System.Diagnostics;
 using static System.Console;
 using MaximumSubArraySum = Examples.MaximumSubArraySum;
 using TwoSums = Algorithms.TwoSums;
-using Ch3 = Examples.Chapter3;
+using OOP = Study.OOP;
 using SortingAndSearching = Examples.SortingAndSearching;
 using Peek = Algorithms.PeekFinding;
 using Stock = Algorithms.BestTimeToBuyAndSellStock;
 using Palindrome = Algorithms.ValidPalindrome;
-using Tree = Algorithms.InvertBinaryTree;
+// using Tree = Algorithms.InvertBinaryTree;
+using Tree = Algorithms.DiameterOfBinaryTree;
+using DataStructures = Examples.DataStructures;
 
 int Min = -10000;
 int Max = 10000;
@@ -59,6 +61,8 @@ for (int i = 0; i < array.Length; i++)
 // Ch3.Chapter3.ExceptionHandler();
 
 // int[] unsorted_array = new int[] { 1, 3, 8, 2, 9, 2, 5, 5 };
+// 1 step { 8, 9, 7, 6, 5, 4, 3, 2, 1 };
+// 2 step pointer to 7 { 9, 7, , 6, 5, 4, 3, 2, 1 };
 int[] unsorted_array = new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 // var arr1 = new int[] {1, 3, 5};
 // var arr2 = new int[] {2, 6};
@@ -74,11 +78,11 @@ int[] unsorted_array = new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 
 // WriteLine(Stock.Solution.getCmp(unsorted_array, 0, int.MinValue, (int x, int y) => { return x > y ? x : y; }));
 
-var tree = new Tree.TreeNode(2);
-var tree_l = new Tree.TreeNode(3);
-var tree_l_1 = new Tree.TreeNode(1);
-tree.left = tree_l;
-tree_l.left = tree_l_1;
+// var tree = new Tree.TreeNode(2);
+// var tree_l = new Tree.TreeNode(3);
+// var tree_l_1 = new Tree.TreeNode(1);
+// tree.left = tree_l;
+// tree_l.left = tree_l_1;
 
 // var tree_l_2 = new Tree.TreeNode(1);
 // var tree_r_2 = new Tree.TreeNode(3);
@@ -93,9 +97,41 @@ tree_l.left = tree_l_1;
 
 
 
-Tree.TreeNode.print2D(tree);
+// Tree.TreeNode.print2D(tree);
 
-var t = Tree.Solution.InvertTree(tree);
+// var t = Tree.Solution.InvertTree(tree);
 
-Tree.TreeNode.print2D(t);
+// Tree.TreeNode.print2D(t);
+
+var sergey = new OOP.Person
+{ Name = "Sergey Yakovlev",
+ DateOfBirth = new DateTime(1981, 4, 9),
+ FavoriteAncientWonder = OOP.WondersOfTheAncientWorld.GreatPyramidOfGiza | OOP.WondersOfTheAncientWorld.ColossusOfRhodes
+};
+
+// WriteLine(
+//     format: "{0}, was born on {1:dddd, d MMMM yyyy}. He's a favorite wonder is {2}",
+//     arg0: sergey.Name,
+//     arg1: sergey.DateOfBirth,
+//     sergey.FavoriteAncientWonder
+// );
+
+var tree =
+  new Tree.TreeNode {
+    val = 2,
+    left = new Tree.TreeNode { val = 3 }
+  };
+
+
+// WriteLine(Tree.Solution.DiameterOfBinaryTree(tree));
+
+// SortingAndSearching.SortingAndSearching.Swap(unsorted_array);
+
+// foreach(var x in unsorted_array) WriteLine(x);
+
+var data_struture = new DataStructures.DataStructures();
+data_struture.vector = new List<int>(unsorted_array);
+
+WriteLine(data_struture.vector.First());
+
 

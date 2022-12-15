@@ -2,8 +2,8 @@ namespace Examples.MaximumSubArraySum;
 
 static class MaximumSubArraySum
 {
-    // O(n3) Time Solution A straightforward way to solve the problem is to go through all possible subarrays, 
-    // calculate the sum of values in each subarray and maintain the maximum sum. 
+    // O(n3) Time Solution A straightforward way to solve the problem is to go through all possible subarrays,
+    // calculate the sum of values in each subarray and maintain the maximum sum.
     // The following code implements this algorithm
     public static int? BruteForceSolutionO3(int[] input)
     {

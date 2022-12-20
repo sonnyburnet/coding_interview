@@ -12,6 +12,7 @@ using Palindrome = Algorithms.ValidPalindrome;
 // using Tree = Algorithms.InvertBinaryTree;
 using Tree = Algorithms.DiameterOfBinaryTree;
 using DataStructures = Examples.DataStructures;
+using DynamicProgramming = Algorithms.DynamicProgramming;
 
 int Min = -10000;
 int Max = 10000;
@@ -19,7 +20,7 @@ int Max = 10000;
 // this declares an integer array with 5 elements
 // and initializes all of them to their default value
 // which is zero
-int[] array = new int[(int)Math.Pow(10,5)];
+int[] array = new int[(int)Math.Pow(10, 5)];
 
 Random randNum = new Random();
 for (int i = 0; i < array.Length; i++)
@@ -104,9 +105,10 @@ int[] unsorted_array = new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 // Tree.TreeNode.print2D(t);
 
 var sergey = new OOP.Person
-{ Name = "Sergey Yakovlev",
- DateOfBirth = new DateTime(1981, 4, 9),
- FavoriteAncientWonder = OOP.WondersOfTheAncientWorld.GreatPyramidOfGiza | OOP.WondersOfTheAncientWorld.ColossusOfRhodes
+{
+    Name = "Sergey Yakovlev",
+    DateOfBirth = new DateTime(1981, 4, 9),
+    FavoriteAncientWonder = OOP.WondersOfTheAncientWorld.GreatPyramidOfGiza | OOP.WondersOfTheAncientWorld.ColossusOfRhodes
 };
 
 // WriteLine(
@@ -117,9 +119,10 @@ var sergey = new OOP.Person
 // );
 
 var tree =
-  new Tree.TreeNode {
-    val = 2,
-    left = new Tree.TreeNode { val = 3 }
+  new Tree.TreeNode
+  {
+      val = 2,
+      left = new Tree.TreeNode { val = 3 }
   };
 
 
@@ -129,9 +132,35 @@ var tree =
 
 // foreach(var x in unsorted_array) WriteLine(x);
 
-var data_struture = new DataStructures.DataStructures();
-data_struture.vector = new List<int>(unsorted_array);
+// var data_struture = new DataStructures.DataStructures();
+// data_struture.vector = new List<int>(unsorted_array);
 
-WriteLine(data_struture.vector.First());
+// WriteLine(data_struture.vector.First());
 
 
+
+DateTime startTime, endTime;
+startTime = DateTime.Now;
+var coins = new int[200];
+var t = DynamicProgramming.Solution.RecursiveApproach(new int[] { 1, 3, 4 }, 5, new bool[200], new int[200], coins);
+endTime = DateTime.Now;
+
+// var elapsed_time = ((TimeSpan)(endTime - startTime)).TotalMilliseconds / 1000;
+// WriteLine($"min coins: {t}, time elapsed: {elapsed_time:F2}");
+
+// var n = 5;
+// while (n > 0)
+// {
+//     WriteLine(coins[n]);
+//     n -= coins[n];
+// }
+
+
+// var seq_array = new int[] { 6, 2, 5, 1, 7, 4, 8, 3 };
+// var res = DynamicProgramming.Solution.LongestIncreasingSubSeq(seq_array);
+// foreach(var i in res) WriteLine(i);
+
+
+var grid = new int[,] {{3, 7, 9, 2, 7}, {9, 8, 3, 5, 5}, {1, 7, 9, 8, 5}, {3, 8, 6, 4, 10}, {6, 3, 9, 7, 8}};
+var res = DynamicProgramming.Solution.PathsInGrid(grid);
+WriteLine(res);

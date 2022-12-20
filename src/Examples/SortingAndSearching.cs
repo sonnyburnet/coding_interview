@@ -125,5 +125,6 @@ class SortingAndSearching
         go(arr, 1);
     }
 
+     // heap and heap sort
 
 }

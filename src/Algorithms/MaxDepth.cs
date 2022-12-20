@@ -19,16 +19,17 @@ namespace Algorithms.MaxDepth;
  */
 public class Solution
 {
-    public int MaxDepth(TreeNode root)
+    public int MaxDepth(int root)
     {
-        int go(TreeNode? node, int x)
-        {
-            if (node == null)
-                return x;
-            var left_x = go(node.left, x + 1);
-            var right_x = go(node.right, x + 1);
-            return Math.Max(left_x, right_x);
-        }
-        return go(root, 0);
+        return 0;
+        // int go(TreeNode? node, int x)
+        // {
+        //     if (node == null)
+        //         return x;
+        //     var left_x = go(node.left, x + 1);
+        //     var right_x = go(node.right, x + 1);
+        //     return Math.Max(left_x, right_x);
+        // }
+        // return go(root, 0);
     }
 }
